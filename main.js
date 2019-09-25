@@ -59,6 +59,7 @@ function startGame(level) {
     gameArea.innerHTML = '';
 
     score.classList.remove('hide');
+
     score.innerHTML = '';
     for (let i = 0; i < getQuantityElements(100)+1; i++) {
         const line = document.createElement('div');
@@ -95,11 +96,11 @@ function playGame() {
     
     if (setting.start) {
         setting.score += setting.speed;
-        score.innerHTML = 'SCORE:<br> ' + setting.score;
+        score.innerHTML = 'SCORE: ' + setting.score;
         moveRoad();
         moveEnemy();
         
-
+        //console.log('ОПА ' + keys[event.key]);
         if (keys.ArrowLeft && setting.x > 0) {
             setting.x -= setting.speed;
         }
@@ -116,12 +117,12 @@ function playGame() {
         car.style.top = setting.y + 'px';
         requestAnimationFrame(playGame);
         
-        localStorage.setItem('score',score.innerHTML);
+        localStorage.setItem('score',setting.score);
     } else{
         music.remove();
         if(localStorage.getItem('score') > localStorage.getItem('betterScore')){
             localStorage.setItem('betterScore', localStorage.getItem('score'));
-            alert('УРА!!! Поздравляю вы побили рекорд. Новый рекорд: '+localStorage.getItem('betterScore') );
+            alert('УРА!!! Поздравляю вы побили рекорд. Новый рекорд: '+ localStorage.getItem('betterScore'));
         } else{
             alert('Набрано очков: '+localStorage.getItem('score'));
         }
@@ -134,6 +135,7 @@ function startRun(event) {
 
     if (event.key in keys){
         keys[event.key] = true;
+        console.log(keys[event.key]);
     }
 }
 
@@ -169,7 +171,7 @@ function moveEnemy(){
                 setting.start = false;
                 console.warn('ДТП');
                 menu.classList.remove('hide');
-                score.style.top = menu.offsetHeight;
+                menu.style.top = score.offsetHeight;
         }
         item.y += setting.speed / 2;
         item.style.top = item.y + 'px';
