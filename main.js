@@ -119,8 +119,6 @@ function playGame() {
         localStorage.setItem('score',score.innerHTML);
     } else{
         music.remove();
-
-        
         if(localStorage.getItem('score') > localStorage.getItem('betterScore')){
             localStorage.setItem('betterScore', localStorage.getItem('score'));
             alert('УРА!!! Поздравляю вы побили рекорд. Новый рекорд: '+localStorage.getItem('betterScore') );
