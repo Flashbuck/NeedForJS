@@ -23,7 +23,6 @@
     margin: auto;
     border-left: 5px solid #cccccc;
     border-right: 5px solid #cccccc;
-    background: #221c1c;
     overflow: hidden;
 }
 
@@ -36,34 +35,40 @@ left: 145px;
 }
 .music{
     position: relative;
-    top: -200px;
+    left: 20px;
 }
-.menu
+body,.menu
  {
     position: absolute;
-    height: 100%;
-    width: 100%;
-    margin: 0;
+    height: 80%;
+    width: 98%;
     padding: 2rem 0;
     text-align: center;
     z-index: 200;
-    color: #fff;
+    color: red;
     font-size: 1.5rem;
-    background: black;
+    background: yellowgreen;
     cursor: pointer;
-    font-family: sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     font-weight: 700;
+    border: 4px dotted yellow;
+}
+.menu>div{
+margin: 0 auto;
+border:  dashed yellow ;
+width: 30%;
+left: 50px;
+overflow: hidden;
 }
 .score{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    background: black;
     padding: 1rem 0;
     z-index: 200;
     font-size: 1.5rem;
-    color: skyblue;
+    color: red;
     text-align: center;
     font-family: sans-serif;
     font-weight: 500;
